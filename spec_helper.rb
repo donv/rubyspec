@@ -39,3 +39,7 @@ unless MSpec::VERSION >= minimum_version
 end
 
 $VERBOSE = nil unless ENV['OUTPUT_WARNINGS']
+
+if PlatformGuard.windows?
+  MSpec.disable_feature(:fork)
+end
